@@ -2,22 +2,21 @@
 global $wpdb;
 $msg = '';
 
-if(!empty($_POST['btn_submit']))
+if(!empty($_POST))
 {
     $wpdb->insert("wp_form_plugin_tbl",[
         "name" => $_POST['name'],
         "email" => $_POST['email'],
         "address" => $_POST['address'],
-
     ]);
 
     if($wpdb->insert_id > 0)
     {
-        $msg = "";
+        $msg = "Data submitted successfully";
     }
     else
     {
-        $msg = "";
+        $msg = "Data submission failed";
     }
 }
 ?>
@@ -34,6 +33,6 @@ if(!empty($_POST['btn_submit']))
     <input type="text" name="email" id="email">
     <label for="name">Address</label>
     <input type="text" name="address" id="address">
-    <button name="btn_submit" type="submit">Submit</button>
+    <button type="submit">Submit</button>
 </form>
 
