@@ -24,7 +24,7 @@ if(!empty($_POST))
 <p><?php echo $msg; ?></p>
 <br>
 
-<h1> Add User Form:</h1>
+<h1> Add User Form:</h1> 
 
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>?page=form-add" method="post">
     <label for="name">Name</label>
